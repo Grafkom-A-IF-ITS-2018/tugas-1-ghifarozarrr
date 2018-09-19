@@ -149,16 +149,28 @@
           0.3, -0.2,  -0.3,
           0.45, -0.6,  -0.3,
           -0.45, -0.6,  -0.3,
-          
+          ///////////////////////////////////////////////////////////////////////////////////////////////////
           // bottom left
           -0.5, -1.3,  -0.3,
           -0.5, -1.3,  0.3,
+          -0.7, -1.3,  0.3,
+          -0.7, -1.3,  -0.3,
+
+          // bottom left 1
+          -1.1, -1.3,  -0.3,
+          -1.1, -1.3,  0.3,
           -1.3, -1.3,  0.3,
           -1.3, -1.3,  -0.3,
-
+          ///////////////////////////////////
           // bottom right
           0.5, -1.3,  -0.3,
           0.5, -1.3,  0.3,
+          0.7, -1.3,  0.3,
+          0.7, -1.3,  -0.3,
+
+          // bottom right
+          1.1, -1.3,  -0.3,
+          1.1, -1.3,  0.3,
           1.3, -1.3,  0.3,
           1.3, -1.3,  -0.3,
 
@@ -266,7 +278,7 @@
         ]
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW)
         AVertexPositionBuffer.itemSize = 3
-        AVertexPositionBuffer.numItems = 100
+        AVertexPositionBuffer.numItems = 108
         // A Color
         AVertexColorBuffer = gl.createBuffer()
         gl.bindBuffer(gl.ARRAY_BUFFER, AVertexColorBuffer)
@@ -278,7 +290,9 @@
           [0.960, 0.682, 0.690, 1.0],     //back right
           [0.960, 0.682, 0.690, 1.0], //back middle
           [0.462, 0.301, 0.4, 1.0], //bottom upper
+          [0.462, 0.301, 0.4, 1.0], ////////gelapndikit
           [0.462, 0.301, 0.4, 1.0], //bottom upper
+          [0.462, 0.301, 0.4, 1.0], ////////gelapndikit
           [0.462, 0.301, 0.4, 1.0], //bottom bottom
           [0.960, 0.682, 0.690, 1.0],//front bottom left
           [0.462, 0.301, 0.4, 1.0], //bottom inner
@@ -291,7 +305,7 @@
           [0.843, 0.411, 0.521, 1.0], //bottom sides outer
           [0.462, 0.301, 0.4, 1.0], //middle bottom
           [1.0, 1.0, 1.0, 1.0], //atas middle
-          [0.843, 0.411, 0.521, 1.0], //top atas
+          [0.462, 0.301, 0.4, 1.0], //top atas
           [0.843, 0.411, 0.521, 1.0], //pinggiran besar
           [0.462, 0.301, 0.4, 1.0], //
           [0.843, 0.411, 0.521, 1.0], //pinggiran besar
@@ -306,7 +320,7 @@
         }
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(unpackedColors), gl.STATIC_DRAW);
         AVertexColorBuffer.itemSize = 4;
-        AVertexColorBuffer.numItems = 100;
+        AVertexColorBuffer.numItems = 108;
 
         AVertexIndexBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, AVertexIndexBuffer);
@@ -336,11 +350,13 @@
           88, 89, 90,   88, 90, 91,
           92, 93, 94,   92, 94, 95,
           96, 97, 98,   96, 98, 99,
+          100, 101, 102,  100, 102, 103,
+          104, 105, 106,  104, 106, 107
 
         ]
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(AVertexIndices), gl.STATIC_DRAW);
         AVertexIndexBuffer.itemSize = 1;
-        AVertexIndexBuffer.numItems = 150;
+        AVertexIndexBuffer.numItems = 162;
 
         // I Position
         IVertexPositionBuffer = gl.createBuffer()
